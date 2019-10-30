@@ -35,7 +35,7 @@ https://docs.google.com/spreadsheets/d/1G0ghAYDYnEa6lnZ082ibYRQoC62wAJr6tFMDDU3g
 
 6. No repositório existe um arquivo .html com o exemplo do HTML EXTRA gerado
 
-![Newman_Teste_Sicredi.png](Newman_Teste_Sicredi.png)
+![Newman_Teste_Sicredi.jpg](Newman_Teste_Sicredi.jpg)
 
 #### Instruções para executar a automação de testes com Selenium (Teste de UI)
 
