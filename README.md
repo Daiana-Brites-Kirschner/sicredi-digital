@@ -41,9 +41,10 @@ https://docs.google.com/spreadsheets/d/1G0ghAYDYnEa6lnZ082ibYRQoC62wAJr6tFMDDU3g
 
 1. Você precisa instalar o selenium-webdriver: `npm install selenium-webdriver`
 
-2. Na pasta 'Teste_UI' existem os drivers do Chrome (versão 77) Windows e Linux para serem utilizados pelo Selenium durante os testes. Caso você tenha outra versão do Chrome, pode baixar do site oficial: https://chromedriver.chromium.org/downloads
+2. Na pasta 'Teste_UI' existem os drivers do Chrome (versão 78) Windows e Linux para serem utilizados pelo Selenium durante os testes. Caso você tenha outra versão do Chrome, pode baixar do site oficial: https://chromedriver.chromium.org/downloads
 
-3. Na pasta 'Teste_UI' faça o comando para executar a automação de teste: `node Sicredi.js`
+3. Na pasta 'Teste_UI' faça o comando para executar a automação de teste: `node ExecutorTests.js`. Nesta pasta existem dois arquivos js, 'ExecutorTests.js' que faz o setup e chama os 10 cenários, e o arquivo 'PageSicredi.js' que mapeia e executa os testes na página do Sicredi.
+
 
 # Considerações finais
 - Verifiquei que o campo "Quanto você quer poupar todo mês?", que é um campo obrigatório, não possui * vermelho indicando que é um campo obrigatório
