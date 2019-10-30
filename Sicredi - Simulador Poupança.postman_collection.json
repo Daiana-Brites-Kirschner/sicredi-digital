@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "bd3070f8-1340-4c32-ae34-9ff76ab0d105",
+		"name": "Sicredi - Simulador Poupança",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Retorna meses e valores da simulação",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "22bb4acb-ffbf-4444-b298-ce2d0d93d6bd",
+						"exec": [
+							"pm.test(\"Status code igual 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"O campo 'id' foi encontrado\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+							"});\r",
+							"pm.test(\"O campo 'meses' foi encontrado\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"meses\");\r",
+							"});\r",
+							"pm.test(\"O campo 'valor' foi encontrado\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"valor\");\r",
+							"});\r",
+							"// Converter string para objeto JSON\r",
+							"var responseJson = JSON.parse(responseBody);\r",
+							"\r",
+							"// Verifica tamanho dos arrays\r",
+							"tests[\"Verifica o tamanho do array 'meses'\"] = responseJson.meses.length === 4;\r",
+							"tests[\"Verifica o tamanho do array 'valor'\"] = responseJson.valor.length === 4;\r",
+							"\r",
+							"// conta quantos elementos do array são números\r",
+							"var countElementsAreNumbers = 0;\r",
+							"for(let element in responseJson.meses){\r",
+							"    if(!isNaN(element)){\r",
+							"        countElementsAreNumbers++;\r",
+							"    }\r",
+							"}\r",
+							"tests[`Verifica se todos os ${responseJson.meses.length} elementos do array 'meses' são números`] = responseJson.meses.length === countElementsAreNumbers;\r",
+							"\r",
+							"\r",
+							"// conta quantos elementos do array são números\r",
+							"countElementsAreNumbers = 0;\r",
+							"for(let element in responseJson.valor){\r",
+							"    if(!isNaN(element)){\r",
+							"        countElementsAreNumbers++;\r",
+							"    }\r",
+							"}\r",
+							"tests[`Verifica se todos os ${responseJson.valor.length} elementos do array 'valor' são números`] = responseJson.valor.length === countElementsAreNumbers;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://5b847b30db24a100142dce1b.mockapi.io/api/v1/simulador",
+					"protocol": "http",
+					"host": [
+						"5b847b30db24a100142dce1b",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"api",
+						"v1",
+						"simulador"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
