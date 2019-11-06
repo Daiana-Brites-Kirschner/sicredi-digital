@@ -30,6 +30,9 @@ testeSimulador: function(testName, perfilEmpresa, valorAplicar, valorInvestir, t
             driver.executeScript("document.getElementById('periodo').setAttribute('value', 'A')")
         }
 
+    
+
+
         // encontra elemento botão através do css
         var button = driver.findElement(By.css('button[type="submit"]'))
         button.then(() => {
@@ -42,6 +45,18 @@ testeSimulador: function(testName, perfilEmpresa, valorAplicar, valorInvestir, t
             driver.sleep(5000).then(() => {
                 console.log(testName + ' #Passo 3 - buscar campo texto com valor calculado')
  
+                driver.takeScreenshot().then(
+                    function(image, err) {
+                        require('fs').writeFile(testName+'_resultado.png', image, 'base64', function(err) {
+                            console.log(err);
+                        });
+                    }
+                );
+
+
+
+
+
                 var valorTxt = driver.findElement(By.className('valor')).getText()
                 valorTxt.then((element) => {
                     console.log(testName + ' #Passo 4 - validar conteúdo do campo texto com valor calculado')
