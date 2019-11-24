@@ -1,4 +1,4 @@
-# Teste da Plataforma Digital Sicredi #2
+# Teste da Plataforma Digital Sicredi
 
 #### Motivador do Projeto
 Garantir que o usuário consiga analisar o resultado do seu investimento na Poupança do Sicredi e que os cálculos estejam de acordo com os juros da Poupança. 
